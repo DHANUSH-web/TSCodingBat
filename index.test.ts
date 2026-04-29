@@ -25,6 +25,7 @@ import {
   has22,
   lucky13,
   sum28,
+  more14,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -188,4 +189,10 @@ test(sum28.name, () => {
   expect(sum28([2, 3, 2, 2, 4, 2])).toBe(true);
   expect(sum28([2, 3, 2, 2, 4, 2, 2])).toBe(false);
   expect(sum28([1, 2, 3, 4])).toBe(false);
+});
+
+test(more14.name, () => {
+  expect(more14([1, 4, 1])).toBe(true);
+  expect(more14([1, 4, 1, 4])).toBe(false);
+  expect(more14([1, 1])).toBe(true);
 });

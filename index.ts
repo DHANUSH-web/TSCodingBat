@@ -153,4 +153,15 @@ export function sum28(nums: number[]): boolean {
   return sum === 8;
 }
 
+export function more14(nums: number[]): boolean {
+  let count = 0;
+
+  for (let n of nums) {
+    if (n == 1) count++;
+    if (n == 4) count--;
+  }
+
+  return count > 0;
+}
+
 console.log("Run `bun test` to test your logic.");
