@@ -173,4 +173,12 @@ export function fizzArray(n: number): number[] {
   return arr;
 }
 
+export function only14(nums: number[]): boolean {
+  for (let n of nums)
+    if (n !== 1 && n !== 4)
+      return false;
+
+  return true;
+}
+
 console.log("Run `bun test` to test your logic.");
