@@ -164,4 +164,13 @@ export function more14(nums: number[]): boolean {
   return count > 0;
 }
 
+export function fizzArray(n: number): number[] {
+  let arr: number[] = [];
+
+  for (let i = 0; i < n; i++)
+    arr.push(i);
+
+  return arr;
+}
+
 console.log("Run `bun test` to test your logic.");

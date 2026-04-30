@@ -26,6 +26,7 @@ import {
   lucky13,
   sum28,
   more14,
+  fizzArray,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -195,4 +196,10 @@ test(more14.name, () => {
   expect(more14([1, 4, 1])).toBe(true);
   expect(more14([1, 4, 1, 4])).toBe(false);
   expect(more14([1, 1])).toBe(true);
+});
+
+test(fizzArray.name, () => {
+  expect(fizzArray(4)).toEqual([0, 1, 2, 3]);
+  expect(fizzArray(1)).toEqual([0]);
+  expect(fizzArray(10)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 });
