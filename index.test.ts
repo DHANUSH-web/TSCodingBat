@@ -42,9 +42,9 @@ test(seeColors.name, () => {
 });
 
 test(frontAgain.name, () => {
-  expect(frontAgain("edited")).toBe(true);
-  expect(frontAgain("edit")).toBe(false);
-  expect(frontAgain("ed")).toBe(true);
+  expect(frontAgain("edited")).toBeTrue();
+  expect(frontAgain("edit")).toBeFalse();
+  expect(frontAgain("ed")).toBeTrue();
 });
 
 test(minCat.name, () => {
@@ -54,9 +54,9 @@ test(minCat.name, () => {
 });
 
 test(near10.name, () => {
-  expect(near10(12)).toBe(true);
-  expect(near10(17)).toBe(false);
-  expect(near10(19)).toBe(true);
+  expect(near10(12)).toBeTrue();
+  expect(near10(17)).toBeFalse();
+  expect(near10(19)).toBeTrue();
 });
 
 test(teaParty.name, () => {
@@ -91,7 +91,7 @@ test(fetchJsonPlaceholderTodo.name, async () => {
     expect(data.userId).toBe(1);
     expect(data.id).toBe(1);
     expect(data.title).toBe("delectus aut autem");
-    expect(data.completed).toBe(false);
+    expect(data.completed).toBeFalse();
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -104,33 +104,33 @@ test(fizzString2.name, () => {
 });
 
 test(twoAsOne.name, () => {
-  expect(twoAsOne(1, 2, 3)).toBe(true);
-  expect(twoAsOne(3, 1, 2)).toBe(true);
-  expect(twoAsOne(3, 2, 2)).toBe(false);
+  expect(twoAsOne(1, 2, 3)).toBeTrue();
+  expect(twoAsOne(3, 1, 2)).toBeTrue();
+  expect(twoAsOne(3, 2, 2)).toBeFalse();
 });
 
 test(inOrder.name, () => {
-  expect(inOrder(1, 2, 4, false)).toBe(true);
-  expect(inOrder(1, 2, 1, false)).toBe(false);
-  expect(inOrder(1, 1, 2, true)).toBe(true);
+  expect(inOrder(1, 2, 4, false)).toBeTrue();
+  expect(inOrder(1, 2, 1, false)).toBeFalse();
+  expect(inOrder(1, 1, 2, true)).toBeTrue();
 });
 
 test(inOrderEqual.name, () => {
-  expect(inOrderEqual(2, 5, 11, false)).toBe(true);
-  expect(inOrderEqual(5, 7, 6, false)).toBe(false);
-  expect(inOrderEqual(5, 5, 7, true)).toBe(true);
+  expect(inOrderEqual(2, 5, 11, false)).toBeTrue();
+  expect(inOrderEqual(5, 7, 6, false)).toBeFalse();
+  expect(inOrderEqual(5, 5, 7, true)).toBeTrue();
 });
 
 test(lastDigit.name, () => {
-  expect(lastDigit(23, 19, 13)).toBe(true);
-  expect(lastDigit(23, 19, 12)).toBe(false);
-  expect(lastDigit(23, 19, 3)).toBe(true);
+  expect(lastDigit(23, 19, 13)).toBeTrue();
+  expect(lastDigit(23, 19, 12)).toBeFalse();
+  expect(lastDigit(23, 19, 3)).toBeTrue();
 });
 
 test(lessBy10.name, () => {
-  expect(lessBy10(1, 2, 11)).toBe(true);
-  expect(lessBy10(11, 2, 10)).toBe(false);
-  expect(lessBy10(0, 10, 2)).toBe(true);
+  expect(lessBy10(1, 2, 11)).toBeTrue();
+  expect(lessBy10(11, 2, 10)).toBeFalse();
+  expect(lessBy10(0, 10, 2)).toBeTrue();
 });
 
 test(withoutDoubles.name, () => {
@@ -175,27 +175,27 @@ test(sum67.name, () => {
 })
 
 test(has22.name, () => {
-  expect(has22([1, 2, 2])).toBe(true);
-  expect(has22([1, 2, 1, 2, 5])).toBe(false);
-  expect(has22([1, 1, 2])).toBe(false);
+  expect(has22([1, 2, 2])).toBeTrue();
+  expect(has22([1, 2, 1, 2, 5])).toBeFalse();
+  expect(has22([1, 1, 2])).toBeFalse();
 });
 
 test(lucky13.name, () => {
-  expect(lucky13([0, 2, 4])).toBe(true);
-  expect(lucky13([1, 2, 3])).toBe(false);
-  expect(lucky13([1, 2, 4])).toBe(false);
+  expect(lucky13([0, 2, 4])).toBeTrue();
+  expect(lucky13([1, 2, 3])).toBeFalse();
+  expect(lucky13([1, 2, 4])).toBeFalse();
 });
 
 test(sum28.name, () => {
-  expect(sum28([2, 3, 2, 2, 4, 2])).toBe(true);
-  expect(sum28([2, 3, 2, 2, 4, 2, 2])).toBe(false);
-  expect(sum28([1, 2, 3, 4])).toBe(false);
+  expect(sum28([2, 3, 2, 2, 4, 2])).toBeTrue();
+  expect(sum28([2, 3, 2, 2, 4, 2, 2])).toBeFalse();
+  expect(sum28([1, 2, 3, 4])).toBeFalse();
 });
 
 test(more14.name, () => {
-  expect(more14([1, 4, 1])).toBe(true);
-  expect(more14([1, 4, 1, 4])).toBe(false);
-  expect(more14([1, 1])).toBe(true);
+  expect(more14([1, 4, 1])).toBeTrue();
+  expect(more14([1, 4, 1, 4])).toBeFalse();
+  expect(more14([1, 1])).toBeTrue();
 });
 
 test(fizzArray.name, () => {
