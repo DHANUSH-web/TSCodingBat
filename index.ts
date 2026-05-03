@@ -181,4 +181,13 @@ export function only14(nums: number[]): boolean {
   return true;
 }
 
+export function fizzArray2(n: number): string[] {
+  let arr: string[] = [];
+
+  for (let i = 0; i < n; i++)
+    arr.push(i.toString());
+
+  return arr;
+}
+
 console.log("Run `bun test` to test your logic.");
