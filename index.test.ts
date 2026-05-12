@@ -29,6 +29,7 @@ import {
   fizzArray,
   only14,
   fizzArray2,
+  no14,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -216,4 +217,10 @@ test(fizzArray2.name, () => {
   expect(fizzArray2(4)).toEqual(['0', '1', '2', '3']);
   expect(fizzArray2(1)).toEqual(['0']);
   expect(fizzArray2(10)).toEqual(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+});
+
+test(no14.name, () => {
+  expect(no14([1, 2, 3])).toBeTrue();
+  expect(no14([1, 2, 3, 4])).toBeFalse();
+  expect(no14([2, 3, 4])).toBeTrue();
 });

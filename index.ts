@@ -190,4 +190,17 @@ export function fizzArray2(n: number): string[] {
   return arr;
 }
 
+export function no14(nums: number[]): boolean {
+  let has1: boolean = false;
+  let has4: boolean = false;
+
+  for (let n of nums) {
+    if (n == 1) has1 = true;
+    if (n == 4) has4 = true;
+    if (has1 && has4) return false;
+  }
+
+  return !(has1 && has4);
+}
+
 console.log("Run `bun test` to test your logic.");
