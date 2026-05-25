@@ -203,4 +203,12 @@ export function no14(nums: number[]): boolean {
   return !(has1 && has4);
 }
 
+export function isEverywhere(nums: number[], val: number): boolean {
+  for (let i = 0; i < nums.length - 1; i++)
+    if (nums[i] !== val && nums[i+1] !== val)
+      return false;
+
+  return true;
+}
+
 console.log("Run `bun test` to test your logic.");
