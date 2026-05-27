@@ -31,6 +31,7 @@ import {
   fizzArray2,
   no14,
   isEverywhere,
+  either24,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -230,4 +231,10 @@ test(isEverywhere.name, () => {
   expect(isEverywhere([1, 2, 1, 3], 1)).toBeTrue();
   expect(isEverywhere([1, 2, 1, 3], 2)).toBeFalse();
   expect(isEverywhere([1, 2, 1, 3, 4], 1)).toBeFalse();
+});
+
+test(either24.name, () => {
+  expect(either24([1, 2, 2])).toBeTrue();
+  expect(either24([4, 4, 1])).toBeTrue();
+  expect(either24([4, 4, 1, 2, 2])).toBeFalse();
 });

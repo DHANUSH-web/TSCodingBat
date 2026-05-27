@@ -211,4 +211,21 @@ export function isEverywhere(nums: number[], val: number): boolean {
   return true;
 }
 
+export function either24(nums: number[]): boolean {
+  let is2 = false;
+  let is4 = false;
+
+  for (let i = 0; i < nums.length-1; i++) {
+    if (is2 && is4) break;
+
+    if (nums[i] === 2 && nums[i+1] === 2)
+      is2 = true;
+
+    if (nums[i] === 4 && nums[i+1] === 4)
+      is4 = true;
+  }
+
+  return is2 !== is4;
+}
+
 console.log("Run `bun test` to test your logic.");
