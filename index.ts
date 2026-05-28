@@ -173,4 +173,59 @@ export function fizzArray(n: number): number[] {
   return arr;
 }
 
+export function only14(nums: number[]): boolean {
+  for (let n of nums)
+    if (n !== 1 && n !== 4)
+      return false;
+
+  return true;
+}
+
+export function fizzArray2(n: number): string[] {
+  let arr: string[] = [];
+
+  for (let i = 0; i < n; i++)
+    arr.push(i.toString());
+
+  return arr;
+}
+
+export function no14(nums: number[]): boolean {
+  let has1: boolean = false;
+  let has4: boolean = false;
+
+  for (let n of nums) {
+    if (n == 1) has1 = true;
+    if (n == 4) has4 = true;
+    if (has1 && has4) return false;
+  }
+
+  return !(has1 && has4);
+}
+
+export function isEverywhere(nums: number[], val: number): boolean {
+  for (let i = 0; i < nums.length - 1; i++)
+    if (nums[i] !== val && nums[i+1] !== val)
+      return false;
+
+  return true;
+}
+
+export function either24(nums: number[]): boolean {
+  let is2 = false;
+  let is4 = false;
+
+  for (let i = 0; i < nums.length-1; i++) {
+    if (is2 && is4) break;
+
+    if (nums[i] === 2 && nums[i+1] === 2)
+      is2 = true;
+
+    if (nums[i] === 4 && nums[i+1] === 4)
+      is4 = true;
+  }
+
+  return is2 !== is4;
+}
+
 console.log("Run `bun test` to test your logic.");

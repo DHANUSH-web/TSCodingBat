@@ -27,6 +27,11 @@ import {
   sum28,
   more14,
   fizzArray,
+  only14,
+  fizzArray2,
+  no14,
+  isEverywhere,
+  either24,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -202,4 +207,34 @@ test(fizzArray.name, () => {
   expect(fizzArray(4)).toEqual([0, 1, 2, 3]);
   expect(fizzArray(1)).toEqual([0]);
   expect(fizzArray(10)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+});
+
+test(only14.name, () => {
+  expect(only14([1, 4, 1, 4])).toBeTrue();
+  expect(only14([1, 4, 2, 4])).toBeFalse();
+  expect(only14([1, 1])).toBeTrue();
+});
+
+test(fizzArray2.name, () => {
+  expect(fizzArray2(4)).toEqual(['0', '1', '2', '3']);
+  expect(fizzArray2(1)).toEqual(['0']);
+  expect(fizzArray2(10)).toEqual(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+});
+
+test(no14.name, () => {
+  expect(no14([1, 2, 3])).toBeTrue();
+  expect(no14([1, 2, 3, 4])).toBeFalse();
+  expect(no14([2, 3, 4])).toBeTrue();
+});
+
+test(isEverywhere.name, () => {
+  expect(isEverywhere([1, 2, 1, 3], 1)).toBeTrue();
+  expect(isEverywhere([1, 2, 1, 3], 2)).toBeFalse();
+  expect(isEverywhere([1, 2, 1, 3, 4], 1)).toBeFalse();
+});
+
+test(either24.name, () => {
+  expect(either24([1, 2, 2])).toBeTrue();
+  expect(either24([4, 4, 1])).toBeTrue();
+  expect(either24([4, 4, 1, 2, 2])).toBeFalse();
 });
