@@ -32,6 +32,7 @@ import {
   no14,
   isEverywhere,
   either24,
+  matchUp,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -237,4 +238,10 @@ test(either24.name, () => {
   expect(either24([1, 2, 2])).toBeTrue();
   expect(either24([4, 4, 1])).toBeTrue();
   expect(either24([4, 4, 1, 2, 2])).toBeFalse();
+});
+
+test(matchUp.name, () => {
+  expect(matchUp([1, 2, 3], [2, 3, 10])).toBe(2);
+  expect(matchUp([1, 2, 3], [2, 3, 5])).toBe(3);
+  expect(matchUp([1, 2, 3], [2, 3, 3])).toBe(2);
 });
