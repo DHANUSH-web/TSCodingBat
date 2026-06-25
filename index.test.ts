@@ -33,6 +33,7 @@ import {
   isEverywhere,
   either24,
   matchUp,
+  has77,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -244,4 +245,10 @@ test(matchUp.name, () => {
   expect(matchUp([1, 2, 3], [2, 3, 10])).toBe(2);
   expect(matchUp([1, 2, 3], [2, 3, 5])).toBe(3);
   expect(matchUp([1, 2, 3], [2, 3, 3])).toBe(2);
+});
+
+test(has77.name, () => {
+  expect(has77([1, 7, 7])).toBeTrue();
+  expect(has77([1, 7, 1, 7])).toBeTrue();
+  expect(has77([1, 7, 1, 1, 7])).toBeFalse();
 });

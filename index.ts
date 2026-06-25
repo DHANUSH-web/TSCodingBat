@@ -238,4 +238,12 @@ export function matchUp(nums1: number[], nums2: number[]): number {
   return count;
 }
 
+export function has77(nums: number[]): boolean {
+  for (let i = 0; i < nums.length - 2; i++) {
+    if ((nums[i] == 7 && (nums[i+1] == 7 || nums[i+2] == 7)) || (nums[i+1] == 7 && nums[i+2] == 7))
+      return true;
+  }
+  return false;
+}
+
 console.log("Run `bun test` to test your logic.");
