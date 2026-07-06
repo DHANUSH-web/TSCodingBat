@@ -246,4 +246,15 @@ export function has77(nums: number[]): boolean {
   return false;
 }
 
+export function has12(nums: number[]): boolean {
+  let found = false;
+
+  for (let n of nums) {
+    if (n === 1 && !found) found = true;
+    if (n === 2 && found) return true;
+  }
+
+  return false;
+}
+
 console.log("Run `bun test` to test your logic.");
