@@ -228,4 +228,33 @@ export function either24(nums: number[]): boolean {
   return is2 !== is4;
 }
 
+export function matchUp(nums1: number[], nums2: number[]): number {
+  let count = 0;
+
+  for (let i = 0; i < nums1.length; i++)
+    if (nums1[i] !== nums2[i] && Math.abs(nums1[i]! - nums2[i]!) <= 2)
+      count++;
+
+  return count;
+}
+
+export function has77(nums: number[]): boolean {
+  for (let i = 0; i < nums.length - 2; i++) {
+    if ((nums[i] == 7 && (nums[i+1] == 7 || nums[i+2] == 7)) || (nums[i+1] == 7 && nums[i+2] == 7))
+      return true;
+  }
+  return false;
+}
+
+export function has12(nums: number[]): boolean {
+  let found = false;
+
+  for (let n of nums) {
+    if (n === 1 && !found) found = true;
+    if (n === 2 && found) return true;
+  }
+
+  return false;
+}
+
 console.log("Run `bun test` to test your logic.");
