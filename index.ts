@@ -257,4 +257,22 @@ export function has12(nums: number[]): boolean {
   return false;
 }
 
+export function modThree(nums: number[]): boolean {
+  for (let i = 0; i < nums.length-2; i++) {
+    if ((
+      nums[i]   % 2 === 0 &&
+      nums[i+1] % 2 === 0 &&
+      nums[i+2] % 2 === 0
+    ) || (
+      nums[i]   % 2 === 1 &&
+      nums[i+1] % 2 === 1 &&
+      nums[i+2] % 2 === 1
+    )) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 console.log("Run `bun test` to test your logic.");
