@@ -275,4 +275,21 @@ export function modThree(nums: number[]): boolean {
   return false;
 }
 
+export function haveThree(nums: number[]): boolean {
+  let count: number = 0;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] === 3 && nums[i + 1] !== 3)
+      count++;
+
+    if (nums[i] === 3 && nums[i + 1] === 3)
+      return false;
+  }
+
+  if (nums.length > 2 && nums[nums.length - 1] === 3 && nums[nums.length - 2] !== 3)
+    count++;
+
+  return count === 3;
+}
+
 console.log("Run `bun test` to test your logic.");

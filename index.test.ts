@@ -36,6 +36,7 @@ import {
   has77,
   has12,
   modThree,
+  haveThree,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -266,4 +267,10 @@ test(modThree.name, () => {
   expect(modThree([2, 1, 3, 5])).toBeTrue();
   expect(modThree([2, 1, 2, 5])).toBeFalse();
   expect(modThree([2, 4, 2, 5])).toBeTrue();
+});
+
+test(haveThree.name, () => {
+  expect(haveThree([3, 1, 3, 1, 3])).toBeTrue();
+  expect(haveThree([3, 1, 3, 3])).toBeFalse();
+  expect(haveThree([3, 4, 3, 3, 4])).toBeFalse();
 });
