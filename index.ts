@@ -292,4 +292,29 @@ export function haveThree(nums: number[]): boolean {
   return count === 3;
 }
 
+export function twoTwo(nums: number[]): boolean {
+  if (nums.length === 0) return true;
+  if (nums.length === 1) return nums[0] != 2;
+
+  let count: number = 0;
+  let couple: boolean = false, only: boolean, both: boolean
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    only = (nums[i] === 2 && nums[i + 1] !== 2) || (nums[i] !== 2 && nums[i + 1] === 2);
+    both = nums[i] === 2 && nums[i + 1] === 2;
+
+    if (only) {
+      couple = false;
+      count++;
+    }
+
+    if (both) {
+      couple = true;
+      i++;
+    }
+  }
+
+  return couple || count === 0
+}
+
 console.log("Run `bun test` to test your logic.");
