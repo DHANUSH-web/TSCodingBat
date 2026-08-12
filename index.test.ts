@@ -38,6 +38,7 @@ import {
   modThree,
   haveThree,
   twoTwo,
+  sameEnds,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -280,4 +281,10 @@ test(twoTwo.name, () => {
   expect(twoTwo([4, 2, 2, 3])).toBeTrue();
   expect(twoTwo([2, 2, 4])).toBeTrue();
   expect(twoTwo([2, 2, 4, 2])).toBeFalse();
+});
+
+test(sameEnds.name, () => {
+  expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 1)).toBeFalse();
+  expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 2)).toBeTrue();
+  expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 3)).toBeFalse();
 });

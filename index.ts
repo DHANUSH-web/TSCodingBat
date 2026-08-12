@@ -317,4 +317,12 @@ export function twoTwo(nums: number[]): boolean {
   return couple || count === 0
 }
 
+export function sameEnds(nums: number[], len: number): boolean {
+  for (let i = 0; i < len; i++)
+    if (nums[i] != nums[nums.length - len + i])
+      return false;
+
+  return true;
+}
+
 console.log("Run `bun test` to test your logic.");
