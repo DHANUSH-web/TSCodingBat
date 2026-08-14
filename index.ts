@@ -325,4 +325,12 @@ export function sameEnds(nums: number[], len: number): boolean {
   return true;
 }
 
+export function tripleUp(nums: number[]): boolean {
+  for (let i = 0; i < nums.length-2; i++)
+    if (nums[i+1] - nums[i] == 1 && nums[i+2] - nums[i+1] == 1)
+      return true;
+
+  return false;
+}
+
 console.log("Run `bun test` to test your logic.");

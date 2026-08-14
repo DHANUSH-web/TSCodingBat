@@ -39,6 +39,7 @@ import {
   haveThree,
   twoTwo,
   sameEnds,
+  tripleUp,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -287,4 +288,10 @@ test(sameEnds.name, () => {
   expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 1)).toBeFalse();
   expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 2)).toBeTrue();
   expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 3)).toBeFalse();
+});
+
+test(tripleUp.name, () => {
+  expect(tripleUp([1, 4, 5, 6, 2])).toBeTrue();
+  expect(tripleUp([1, 2, 3])).toBeTrue();
+  expect(tripleUp([1, 2, 4])).toBeFalse();
 });
