@@ -35,6 +35,11 @@ import {
   matchUp,
   has77,
   has12,
+  modThree,
+  haveThree,
+  twoTwo,
+  sameEnds,
+  tripleUp,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -259,4 +264,34 @@ test(has12.name, () => {
   expect(has12([1, 3, 5, 2])).toBeTrue();
   expect(has12([1, 7, 1, 2, 7])).toBeTrue();
   expect(has12([1])).toBeFalse();
+});
+
+test(modThree.name, () => {
+  expect(modThree([2, 1, 3, 5])).toBeTrue();
+  expect(modThree([2, 1, 2, 5])).toBeFalse();
+  expect(modThree([2, 4, 2, 5])).toBeTrue();
+});
+
+test(haveThree.name, () => {
+  expect(haveThree([3, 1, 3, 1, 3])).toBeTrue();
+  expect(haveThree([3, 1, 3, 3])).toBeFalse();
+  expect(haveThree([3, 4, 3, 3, 4])).toBeFalse();
+});
+
+test(twoTwo.name, () => {
+  expect(twoTwo([4, 2, 2, 3])).toBeTrue();
+  expect(twoTwo([2, 2, 4])).toBeTrue();
+  expect(twoTwo([2, 2, 4, 2])).toBeFalse();
+});
+
+test(sameEnds.name, () => {
+  expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 1)).toBeFalse();
+  expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 2)).toBeTrue();
+  expect(sameEnds([5, 6, 45, 99, 13, 5, 6], 3)).toBeFalse();
+});
+
+test(tripleUp.name, () => {
+  expect(tripleUp([1, 4, 5, 6, 2])).toBeTrue();
+  expect(tripleUp([1, 2, 3])).toBeTrue();
+  expect(tripleUp([1, 2, 4])).toBeFalse();
 });

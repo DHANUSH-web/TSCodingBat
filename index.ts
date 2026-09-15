@@ -257,4 +257,80 @@ export function has12(nums: number[]): boolean {
   return false;
 }
 
+export function modThree(nums: number[]): boolean {
+  for (let i = 0; i < nums.length-2; i++) {
+    if ((
+      nums[i]   % 2 === 0 &&
+      nums[i+1] % 2 === 0 &&
+      nums[i+2] % 2 === 0
+    ) || (
+      nums[i]   % 2 === 1 &&
+      nums[i+1] % 2 === 1 &&
+      nums[i+2] % 2 === 1
+    )) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+export function haveThree(nums: number[]): boolean {
+  let count: number = 0;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] === 3 && nums[i + 1] !== 3)
+      count++;
+
+    if (nums[i] === 3 && nums[i + 1] === 3)
+      return false;
+  }
+
+  if (nums.length > 2 && nums[nums.length - 1] === 3 && nums[nums.length - 2] !== 3)
+    count++;
+
+  return count === 3;
+}
+
+export function twoTwo(nums: number[]): boolean {
+  if (nums.length === 0) return true;
+  if (nums.length === 1) return nums[0] != 2;
+
+  let count: number = 0;
+  let couple: boolean = false, only: boolean, both: boolean
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    only = (nums[i] === 2 && nums[i + 1] !== 2) || (nums[i] !== 2 && nums[i + 1] === 2);
+    both = nums[i] === 2 && nums[i + 1] === 2;
+
+    if (only) {
+      couple = false;
+      count++;
+    }
+
+    if (both) {
+      couple = true;
+      i++;
+    }
+  }
+
+  return couple || count === 0
+}
+
+export function sameEnds(nums: number[], len: number): boolean {
+  for (let i = 0; i < len; i++)
+    if (nums[i] != nums[nums.length - len + i])
+      return false;
+
+  return true;
+}
+
+export function tripleUp(nums: number[]): boolean {
+  for (let i = 0; i < nums.length-2; i++)
+    if (nums[i+1] - nums[i] == 1 && nums[i+2] - nums[i+1] == 1)
+      return true;
+
+  return false;
+}
+
 console.log("Run `bun test` to test your logic.");
