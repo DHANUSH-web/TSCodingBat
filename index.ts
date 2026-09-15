@@ -333,4 +333,13 @@ export function tripleUp(nums: number[]): boolean {
   return false;
 }
 
+export function fizzArray3(start: number, end: number): number[] {
+  let arr: number[] = [];
+
+  for (let i = start; i < end; i++)
+    arr.push(i);
+
+  return arr;
+}
+
 console.log("Run `bun test` to test your logic.");

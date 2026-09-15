@@ -40,6 +40,7 @@ import {
   twoTwo,
   sameEnds,
   tripleUp,
+  fizzArray3,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -294,4 +295,10 @@ test(tripleUp.name, () => {
   expect(tripleUp([1, 4, 5, 6, 2])).toBeTrue();
   expect(tripleUp([1, 2, 3])).toBeTrue();
   expect(tripleUp([1, 2, 4])).toBeFalse();
+});
+
+test(fizzArray3.name, () => {
+  expect(fizzArray3(5, 10)).toEqual([5, 6, 7, 8, 9]);
+  expect(fizzArray3(11, 18)).toEqual([11, 12, 13, 14, 15, 16, 17]);
+  expect(fizzArray3(1, 3)).toEqual([1, 2]);
 });
