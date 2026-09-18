@@ -342,4 +342,10 @@ export function fizzArray3(start: number, end: number): number[] {
   return arr;
 }
 
+export function shiftLeft(nums: number[]): number[] {
+  if (nums.length <= 1) return nums;
+
+  return [...nums.slice(1, nums.length), nums[0]];
+}
+
 console.log("Run `bun test` to test your logic.");

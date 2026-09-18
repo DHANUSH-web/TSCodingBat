@@ -41,6 +41,7 @@ import {
   sameEnds,
   tripleUp,
   fizzArray3,
+  shiftLeft,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -301,4 +302,10 @@ test(fizzArray3.name, () => {
   expect(fizzArray3(5, 10)).toEqual([5, 6, 7, 8, 9]);
   expect(fizzArray3(11, 18)).toEqual([11, 12, 13, 14, 15, 16, 17]);
   expect(fizzArray3(1, 3)).toEqual([1, 2]);
+});
+
+test(shiftLeft.name, () => {
+  expect(shiftLeft([5, 1, 2, 3, 4])).toEqual([1, 2, 3, 4, 5]);
+  expect(shiftLeft([1, 2])).toEqual([2, 1]);
+  expect(shiftLeft([1])).toEqual([1]);
 });
