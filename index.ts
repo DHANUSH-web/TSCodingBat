@@ -348,4 +348,12 @@ export function shiftLeft(nums: number[]): number[] {
   return [...nums.slice(1, nums.length), nums[0]];
 }
 
+export function pre4(nums: number[]): number[] {
+  let index: number = nums.indexOf(4);
+
+  if (index === -1) return nums;
+
+  return nums.slice(0, index);
+}
+
 console.log("Run `bun test` to test your logic.");
