@@ -356,4 +356,12 @@ export function pre4(nums: number[]): number[] {
   return nums.slice(0, index);
 }
 
+export function post4(nums: number[]): number[] {
+  let index: number = nums.lastIndexOf(4);
+
+  if (index === -1) return nums;
+
+  return nums.slice(index + 1, nums.length);
+}
+
 console.log("Run `bun test` to test your logic.");

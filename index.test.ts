@@ -43,6 +43,7 @@ import {
   fizzArray3,
   shiftLeft,
   pre4,
+  post4,
 } from "./index";
 
 test(lastTwo.name, () => {
@@ -315,4 +316,10 @@ test(pre4.name, () => {
   expect(pre4([1, 2, 4, 5])).toEqual([1, 2]);
   expect(pre4([1, 3, 5, 2, 4])).toEqual([1, 3, 5, 2]);
   expect(pre4([1, 4, 4, 5])).toEqual([1]);
+});
+
+test(post4.name, () => {
+  expect(post4([2, 4, 1, 2])).toEqual([1, 2]);
+  expect(post4([4, 1, 4, 2])).toEqual([2]);
+  expect(post4([4, 4, 1, 2, 3])).toEqual([1, 2, 3]);
 });
